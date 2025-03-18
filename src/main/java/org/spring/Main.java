@@ -14,7 +14,7 @@ public class Main {
         graph=new Task().createGraph(15);
 
         for(Task task:graph){
-            task.getLog();
+            System.out.println(task.getLog());
         }
     }
 }

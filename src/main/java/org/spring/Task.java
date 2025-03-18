@@ -54,10 +54,10 @@ public class Task {
     public List<Task> createGraph(int taskCount){
         Random random=new Random();
         List<Task> graph=new ArrayList<>();
-        Task nullTask=new Task(random.nextInt(),null,null);
+        Task nullTask=new Task(random.nextInt(1,1000),null,null);
         graph.add(nullTask);
         for(int i=0;i<taskCount;i++){
-            graph.add(new Task(random.nextInt(),graph.get(i-1).next,null));
+            graph.add(new Task(random.nextInt(1,1000),graph.get(i).next,null));
         }
 
         return graph;
