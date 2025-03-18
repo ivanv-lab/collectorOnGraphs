@@ -1,6 +1,7 @@
 package org.spring;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -12,10 +13,10 @@ public class Task {
 
     public Task(){}
 
-    public Task(int value,Task next, Task prev) {
+    public Task(int value, Task prev, Task next) {
         this.n=value;
-        this.next = next;
         this.prev = prev;
+        this.next = next;
         this.log="Выполнена задача сборки номер "+n;
     }
 
@@ -54,10 +55,12 @@ public class Task {
     public List<Task> createGraph(int taskCount){
         Random random=new Random();
         List<Task> graph=new ArrayList<>();
-        Task nullTask=new Task(random.nextInt(1,1000),null,null);
+        Task nullTask=new Task(0,null,null);
+        Task firstTask=new Task(1,nullTask,null);
         graph.add(nullTask);
-        for(int i=0;i<taskCount;i++){
-            graph.add(new Task(random.nextInt(1,1000),graph.get(i).next,null));
+        graph.add(firstTask);
+        for(int i=1;i<taskCount;i++){
+            graph.add(new Task(i,graph.get(random.nextInt(0,i)),null));
         }
 
         return graph;
