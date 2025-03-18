@@ -3,27 +3,37 @@ package org.spring;
 import java.util.List;
 
 public class Task {
-    private List<Task> predTaskCollection;
-    private List<Task> poslTaskCollection;
+    int n;
+    Task next;
+    Task prev;
 
-    public Task(List<Task> predTaskCollection, List<Task> poslTaskCollection){
-        this.predTaskCollection=predTaskCollection;
-        this.poslTaskCollection=poslTaskCollection;
+    public Task(Task next, Task prev) {
+        this.n++;
+        this.next = next;
+        this.prev = prev;
     }
 
-    public List<Task> getPredTaskCollection() {
-        return predTaskCollection;
+    public int getN() {
+        return n;
     }
 
-    public void setPredTaskCollection(List<Task> predTaskCollection) {
-        this.predTaskCollection = predTaskCollection;
+    public void setN(int n) {
+        this.n = n;
     }
 
-    public List<Task> getPoslTaskCollection() {
-        return poslTaskCollection;
+    public Task getNext() {
+        return next;
     }
 
-    public void setPoslTaskCollection(List<Task> poslTaskCollection) {
-        this.poslTaskCollection = poslTaskCollection;
+    public void setNext(Task next) {
+        this.next = next;
+    }
+
+    public Task getPrev() {
+        return prev;
+    }
+
+    public void setPrev(Task prev) {
+        this.prev = prev;
     }
 }
