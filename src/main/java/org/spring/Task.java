@@ -59,7 +59,7 @@ public class Task {
         Task firstTask=new Task(1,nullTask,null);
         graph.add(nullTask);
         graph.add(firstTask);
-        for(int i=1;i<taskCount;i++){
+        for(int i=2;i<taskCount;i++){
             graph.add(new Task(i,graph.get(random.nextInt(0,i)),null));
         }
 
