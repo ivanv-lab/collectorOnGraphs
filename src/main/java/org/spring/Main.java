@@ -1,8 +1,5 @@
 package org.spring;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,5 +13,6 @@ public class Main {
         for(Task task:graph){
             System.out.println(task.getLog());
         }
+
     }
 }
